@@ -67,8 +67,6 @@ flowchart LR
 
 ---
 
-## 3. Resource providers
-
 ## 3. Portal tour & Cloud Shell
 
 > Cloud Shell is a browser terminal that's already signed in to Azure, with
