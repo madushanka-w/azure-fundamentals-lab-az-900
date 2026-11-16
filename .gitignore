@@ -1,0 +1,29 @@
+# --- Secrets & credentials (never commit) ---
+.env
+*.env
+*.pem
+*.pfx
+*.key
+*.publishsettings
+local.settings.json
+secrets/
+
+# --- Terraform (Phase 7) ---
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+
+# --- Tooling ---
+.azure/
+__pycache__/
+.venv/
+
+# --- Editors / OS ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

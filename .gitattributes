@@ -1,0 +1,9 @@
+# Store all text files with LF (scripts must run on Linux / Cloud Shell)
+* text=auto eol=lf
+
+# Binary files — never touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
