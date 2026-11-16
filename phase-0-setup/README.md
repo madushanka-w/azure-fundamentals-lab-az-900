@@ -9,8 +9,8 @@
 |---|---|---|
 | 1 | Budget alert | Portal |
 | 2 | GitHub repository | Git + GitHub |
-| 3 | Resource providers | Portal + CLI |
-| 4 | Portal tour & Cloud Shell | Portal |
+| 3 | Portal tour & Cloud Shell | Portal |
+| 4 | Resource providers | Portal + CLI |
 | 5 | Local tooling | winget / apt |
 
 ---
@@ -68,6 +68,44 @@ flowchart LR
 ---
 
 ## 3. Resource providers
+
+## 3. Portal tour & Cloud Shell
+
+> Cloud Shell is a browser terminal that's already signed in to Azure, with
+> Azure CLI, Az PowerShell, Terraform and Git preinstalled — zero setup,
+> any device.
+
+```mermaid
+flowchart LR
+    A[Browser] --> B[Azure Portal]
+    B -->|>_ icon| C[Cloud Shell<br/>Bash · ephemeral]
+    C --> D[Azure CLI / Bicep / Terraform]
+    C -->|git clone| E[This repo]
+    D --> F[Azure Resource Manager]
+```
+
+| Setting | Value | Why |
+|---|---|---|
+| Shell | Bash | Same commands as Git Bash and Ubuntu |
+| Storage | None (ephemeral session) | No storage account cost; scripts live in GitHub |
+| Subscription | Azure subscription 1 | The only lab subscription |
+
+**Verify:** `az account show -o table` shows the subscription as default.
+
+**Gotchas**
+- Ephemeral sessions are wiped after ~20 min idle → commit and push often, re-clone when needed.
+- Bicep isn't preinstalled → `az bicep install`, and again in every new ephemeral session.
+- Portal's *Directories + subscriptions* filter can hide resources — check it first if something "disappears".
+
+---
+
+## 4. Resource providers
+
+_Coming next._
+
+---
+
+## 5. Local tooling
 
 _Coming next._
 
