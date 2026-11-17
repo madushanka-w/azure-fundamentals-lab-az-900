@@ -19,8 +19,8 @@ flowchart LR
 
 | # | Phase | Covers | Status |
 |---|---|---|---|
-| 0 | [Setup](phase-0-setup/) | Account, budget, tooling, repo | 🟡 In progress |
-| 1 | [Cloud concepts](phase-1-cloud-concepts/) | Service & deployment models, SLAs, regions, management groups | ⬜ |
+| 0 | [Setup](phase-0-setup/) | Account, budget, tooling, repo | ✅ Done |
+| 1 | [Cloud concepts](phase-1-cloud-concepts/) | Service & deployment models, SLAs, regions, management groups | 🟡 In progress |
 | 2 | [Networking](phase-2-networking/) | Hub-spoke VNets, NSGs, DNS, private endpoints, App Gateway | ⬜ |
 | 3 | [Compute](phase-3-compute/) | VMs, availability, VMSS + LB, App Service, ACI, Functions | ⬜ |
 | 4 | [Storage & data](phase-4-storage-data/) | Storage tiers & redundancy, Files, SQL, Cosmos DB | ⬜ |

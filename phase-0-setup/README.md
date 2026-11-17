@@ -3,6 +3,8 @@
 > Everything later phases depend on: a cost safety net, tooling that works on
 > Windows and Ubuntu, and a repo structure reused by every phase.
 
+![Phase 0 overview](diagrams/phase-0.excalidraw.svg)
+
 ## Contents
 
 | # | Step | Built with |
