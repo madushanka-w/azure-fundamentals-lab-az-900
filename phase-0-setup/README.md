@@ -99,7 +99,32 @@ flowchart LR
 
 ## 4. Resource providers
 
-_Coming next._
+> Every Azure service comes from a resource provider (e.g. `Microsoft.Compute`).
+> A subscription must be **registered** with a provider before it can create
+> that provider's resources. Only the providers this lab uses are registered.
+
+```mermaid
+flowchart LR
+    A[az vm create] --> B[Azure Resource Manager]
+    B --> C{Microsoft.Compute<br/>registered?}
+    C -->|Yes| D[VM created]
+    C -->|No| E[MissingSubscription<br/>Registration error]
+```
+
+| Decision | Value | Why |
+|---|---|---|
+| Scope | Subscription | Providers are registered per subscription |
+| Which | Only providers used in Phases 1–6 | Least privilege — smaller surface than "register all" |
+| How | [`scripts/register-providers.sh`](scripts/register-providers.sh) | Idempotent, re-runnable, documents the list |
+| Manual | `Microsoft.Network` via Portal | See the Portal flow once |
+
+**Verify:** `./scripts/register-providers.sh --status` → every provider `Registered`.
+
+**Gotchas**
+- The Portal auto-registers on *Create*; CLI / Bicep often don't → register before scripting.
+- Registration is async (1–5 min) — `register` returns before it's done.
+- `az` on Windows ends output with `\r` → `tr -d '\r'` keeps string comparisons portable.
+- Windows has no execute bit → `git update-index --chmod=+x` so `./script.sh` works on Linux.
 
 ---
 
