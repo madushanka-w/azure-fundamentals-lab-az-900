@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "ms-vscode.azurecli",
+    "ms-azuretools.vscode-bicep",
+    "ms-vscode.powershell",
+    "ms-azuretools.vscode-azureresourcegroups",
+    "bierner.markdown-mermaid",
+    "pomdtr.excalidraw-editor"
+  ]
+}
