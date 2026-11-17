@@ -130,12 +130,27 @@ flowchart LR
 
 ## 5. Local tooling
 
-_Coming next._
+> Cloud Shell is for quick checks; real work happens locally — persistent files,
+> VS Code, and the same tools a CI/CD pipeline would use.
 
-## 4. Portal tour & Cloud Shell
+| Tool | Windows | Ubuntu | Used for |
+|---|---|---|---|
+| Azure CLI | `winget install Microsoft.AzureCLI` | `curl -sL https://aka.ms/InstallAzureCLIDeb \| sudo bash` | Main scripting tool, every phase |
+| Bicep | `az bicep install` | `az bicep install` | Azure-native IaC (Phase 7) |
+| PowerShell 7 | `winget install Microsoft.PowerShell` | `sudo snap install powershell --classic` | CLI vs PowerShell comparison |
+| Az module | `Install-Module Az -Scope CurrentUser` | same (in `pwsh`) | Azure cmdlets |
+| VS Code extensions | [`.vscode/extensions.json`](../.vscode/extensions.json) | same | CLI/Bicep IntelliSense, Mermaid, Excalidraw |
 
-_Coming next._
+| Setting | Value | Why |
+|---|---|---|
+| `az config defaults.location` | `southeastasia` | Enforces the lab region when `--location` is forgotten |
+| Az module scope | CurrentUser | No admin rights, no system-wide changes |
+| Terraform | Deferred to Phase 7 | Save disk until needed |
 
-## 5. Local tooling
+**Verify:** `./phase-0-setup/scripts/register-providers.sh --status` from Git Bash → all `Registered`
+(same result as Cloud Shell — the toolchain and the `\r` fix both work).
 
-_Coming next._
+**Gotchas**
+- After installing with winget, **close every terminal and VS Code** — open shells keep the old PATH.
+- `pwsh` (PowerShell 7) and `powershell` (5.1) are separate programs; Az module goes in 7.
+- The Az module is large (~1 GB) — check free disk first.
