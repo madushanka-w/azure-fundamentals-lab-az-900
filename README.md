@@ -29,6 +29,8 @@ flowchart LR
 | 7 | [IaC](phase-7-iac/) | ARM → Bicep → Terraform, one-command deploy/destroy | ⬜ |
 | — | [Concepts](concepts/) | One-pagers: databases, integration, IoT, AI/ML, … | ⬜ |
 
+**Standards:** [Naming & tagging](docs/naming-and-tagging.md)
+
 ## Repo layout
 
 ```
